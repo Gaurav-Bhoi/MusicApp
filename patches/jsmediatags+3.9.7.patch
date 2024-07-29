@@ -1,0 +1,81 @@
+diff --git a/node_modules/jsmediatags/CONTRIBUTING.md b/node_modules/jsmediatags/CONTRIBUTING.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/CONTRIBUTORS.md b/node_modules/jsmediatags/CONTRIBUTORS.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/LICENSE.md b/node_modules/jsmediatags/LICENSE.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/README.md b/node_modules/jsmediatags/README.md
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/bower.json b/node_modules/jsmediatags/bower.json
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ArrayBufferFileReader.js b/node_modules/jsmediatags/build2/ArrayBufferFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ArrayFileReader.js b/node_modules/jsmediatags/build2/ArrayFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/BlobFileReader.js b/node_modules/jsmediatags/build2/BlobFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ByteArrayUtils.js b/node_modules/jsmediatags/build2/ByteArrayUtils.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ChunkedFileData.js b/node_modules/jsmediatags/build2/ChunkedFileData.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/FLACTagContents.js b/node_modules/jsmediatags/build2/FLACTagContents.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/FLACTagReader.js b/node_modules/jsmediatags/build2/FLACTagReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/FlowTypes.js b/node_modules/jsmediatags/build2/FlowTypes.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ID3v1TagReader.js b/node_modules/jsmediatags/build2/ID3v1TagReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ID3v2FrameReader.js b/node_modules/jsmediatags/build2/ID3v2FrameReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ID3v2TagContents.js b/node_modules/jsmediatags/build2/ID3v2TagContents.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ID3v2TagReader.js b/node_modules/jsmediatags/build2/ID3v2TagReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/MP4TagContents.js b/node_modules/jsmediatags/build2/MP4TagContents.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/MP4TagReader.js b/node_modules/jsmediatags/build2/MP4TagReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/MediaFileReader.js b/node_modules/jsmediatags/build2/MediaFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/MediaTagReader.js b/node_modules/jsmediatags/build2/MediaTagReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/NodeFileReader.js b/node_modules/jsmediatags/build2/NodeFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/ReactNativeFileReader.js b/node_modules/jsmediatags/build2/ReactNativeFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/StringUtils.js b/node_modules/jsmediatags/build2/StringUtils.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/XhrFileReader.js b/node_modules/jsmediatags/build2/XhrFileReader.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/build2/jsmediatags.js b/node_modules/jsmediatags/build2/jsmediatags.js
+old mode 100644
+new mode 100755
+diff --git a/node_modules/jsmediatags/dist/jsmediatags.min.js b/node_modules/jsmediatags/dist/jsmediatags.min.js
+old mode 100644
+new mode 100755
