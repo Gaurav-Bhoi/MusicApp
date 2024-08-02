@@ -3,10 +3,11 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   searchBarContainer: {
     flexDirection: 'row',
-    height: 40,
+    height: 30,
     width: 200,
     marginRight: 10,
     borderRadius: 5,
+    justifyContent: 'flex-end',
   },
   searchIcon: {
     alignSelf: 'flex-end',
@@ -21,6 +22,9 @@ const styles = StyleSheet.create({
     flex: 1,
     borderBottomLeftRadius: 4,
     borderTopLeftRadius: 4,
+    padding: 0,
+
+    paddingLeft: 7,
   },
 });
 

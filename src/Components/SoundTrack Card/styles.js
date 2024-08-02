@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   soundTrackContainer: {
@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     elevation: 2,
-    shadowOffset: { width: 0, height: 2 },
-    shadowColor: '#D7DDE9'
+    shadowOffset: {width: 0, height: 2},
+    shadowColor: 'black',
   },
 
   vinylRecord: {
-    height: "100%"
+    height: '100%',
   },
   vinylRecordContainer: {
     alignSelf: 'center',
@@ -22,12 +22,12 @@ const styles = StyleSheet.create({
     borderColor: '#41C8C6',
     margin: 5,
     padding: 3,
-    borderRadius: 5
+    borderRadius: 5,
   },
   musicController: {
     alignSelf: 'center',
-    marginRight: 5
-  }
-})
+    marginRight: 5,
+  },
+});
 
-export default styles
+export default styles;

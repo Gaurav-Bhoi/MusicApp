@@ -9,10 +9,10 @@ import {
   Dimensions,
   Modal,
   BackHandler,
+  SafeAreaView,
 } from 'react-native';
 import ExitScreen from '../../Components/Exit Screen/ExitScreen';
 import {Bar} from 'react-native-progress';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import CommonScreen from '../../Components/Common Screen/screen';
 import {useSelector, useDispatch} from 'react-redux';
 import MarqueeText from 'react-native-marquee';
@@ -240,6 +240,7 @@ export default function Home(props) {
               flexDirection: 'column',
               width: '100%',
               justifyContent: 'space-between',
+              alignItems: 'center',
             }}
             numColumns={3}
           />

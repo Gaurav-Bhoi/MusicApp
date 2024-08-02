@@ -34,7 +34,7 @@ export default function Play_Music(props) {
     : {name: 'controller-play', size: 35, marginRight: 10};
 
   const [opacity, setOpacity] = useState(new Animated.Value(1));
-  const [volume, setVolume] = useState();
+  const [volume, setVolume] = useState(0.5);
 
   useEffect(() => {
     summonSoundBar();
@@ -52,7 +52,7 @@ export default function Play_Music(props) {
 
   const getVolume = async () => {
     const volume = await VolumeManager.getVolume('music');
-    setVolume(volume);
+    setVolume(volume.music);
   };
 
   const vasnishSoundBar = () => {

@@ -8,6 +8,8 @@ import {
   Dimensions,
   PanResponder,
   Animated,
+  SafeAreaView,
+  StatusBar,
 } from 'react-native';
 import {styles} from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -15,6 +17,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {updateShowSettings} from '../../Store/Reducers/settingsReducer';
 
 export default function Settings(props) {
+  console.log('this is status height', StatusBar.currentHeight);
   useEffect(() => {
     Animated.spring(animationValue, {
       toValue: 10,
@@ -34,7 +37,7 @@ export default function Settings(props) {
     state => state.settingsReducer.useColor,
   );
   const lastGesture = useRef(0);
-  var {height} = Dimensions.get('window');
+  var height = Dimensions.get('window').height - 24;
   const dragThreshold = 40;
 
   const trans = {
@@ -95,12 +98,18 @@ export default function Settings(props) {
   };
 
   return (
-    <Animated.View
-      style={[styles.windowStyle, trans, {backgroundColor: screenBackground}]}>
-      <View {...panResp.panHandlers} style={styles.grabberIcon}>
-        <Icon name="drag-horizontal-variant" size={40} color="#41C8C6" />
-      </View>
-      {props.children}
-    </Animated.View>
+    <SafeAreaView>
+      <Animated.View
+        style={[
+          styles.windowStyle,
+          trans,
+          {backgroundColor: screenBackground},
+        ]}>
+        <View {...panResp.panHandlers} style={styles.grabberIcon}>
+          <Icon name="drag-horizontal-variant" size={40} color="#41C8C6" />
+        </View>
+        {props.children}
+      </Animated.View>
+    </SafeAreaView>
   );
 }

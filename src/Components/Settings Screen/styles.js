@@ -9,8 +9,8 @@ export const styles = StyleSheet.create({
     height: height,
     bottom: -(height / 4),
     alignItems: 'center',
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
     // opacity: 0.9,
     borderColor: '#808589',
   },
@@ -32,5 +32,6 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 5,
   },
 });
