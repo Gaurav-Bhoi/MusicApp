@@ -1,48 +1,52 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Settings_Controller} from '../../Controllers/Seetings Controller/settingsController';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {View, TextInput, TouchableOpacity, Animated} from 'react-native';
+import {View, TextInput, TouchableOpacity} from 'react-native';
 import styles from './style';
 import {useSelector, useDispatch} from 'react-redux';
-import {updateShowSearchBar} from '../../Store/Reducers/settingsReducer';
 import {Music_Controller} from '../../Controllers/Music Controller/musicController';
-import {findLastKey} from 'lodash';
 
 export default function SearchBar(props) {
-  const animatedWidth = useRef(new Animated.Value(0)).current;
-
-  const showSearchBar = useSelector(
-    state => state.settingsReducer.showSearchBar,
-  );
-
-  useEffect(() => {
-    Animated.timing(animatedWidth, {
-      toValue: 200,
-      duration: 2000,
-      useNativeDriver: false,
-    }).start();
-  }, [showSearchBar]);
-
   const songs = useSelector(state => state.musicReducer.allSongs);
-
-  const bgCol = showSearchBar ? 'white' : null;
   const searchIconBg = showSearchBar ? 'gray' : '#FDFDFF';
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const dispatcher = useDispatch();
 
-  const onPressSearchIcon = () => {
-    dispatcher(updateShowSearchBar());
-  };
-
-  const renderSearchTextInput = () => {
-    if (showSearchBar) {
-      return (
-        <Animated.View
+  return (
+    <View
+      style={{
+        height: 25,
+        width: 180,
+        flexDirection: 'row-reverse',
+        marginRight: 50,
+      }}>
+      <TouchableOpacity
+        style={{
+          backgroundColor: showSearchBar ? 'white' : '#41C8C6',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderTopRightRadius: 5,
+          borderBottomRightRadius: 5,
+          paddingHorizontal: 5,
+          marginRight: 5,
+        }}
+        onPress={() => setShowSearchBar(!showSearchBar)}>
+        <AntDesign
+          name="search1"
+          size={18}
+          color={showSearchBar ? 'gray' : 'white'}
+        />
+      </TouchableOpacity>
+      {showSearchBar && (
+        <View
           style={{
-            backgroundColor: 'red',
-            width: animatedWidth,
+            backgroundColor: 'white',
             height: '100%',
+            width: '100%',
+            borderTopLeftRadius: 5,
+            borderBottomLeftRadius: 5,
           }}>
-          {/* <TextInput
+          <TextInput
             autoFocus={true}
             placeholder="search music here..."
             underlineColorAndroid="transparent"
@@ -50,24 +54,9 @@ export default function SearchBar(props) {
             onChangeText={text =>
               Music_Controller.handleMusicSearch(dispatcher, songs, text)
             }
-          /> */}
-        </Animated.View>
-      );
-    } else {
-      return <View style={styles.textInputStyle}></View>;
-    }
-  };
-
-  return (
-    <>
-      <View style={styles.searchBarContainer}>
-        {renderSearchTextInput()}
-        <TouchableOpacity
-          style={[styles.searchIcon, {backgroundColor: bgCol}]}
-          onPress={onPressSearchIcon}>
-          <AntDesign name="search1" size={20} color={searchIconBg} />
-        </TouchableOpacity>
-      </View>
-    </>
+          />
+        </View>
+      )}
+    </View>
   );
 }

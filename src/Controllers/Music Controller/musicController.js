@@ -183,7 +183,7 @@ export class Music_Controller {
 
     const result = _.filter(songs, ele => {
       ele = JSON.parse(ele);
-      if (ele.name.includes(searchText)) {
+      if (ele.name.toLowerCase().includes(searchText)) {
         return ele;
       }
     });

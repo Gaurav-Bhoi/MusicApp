@@ -17,7 +17,6 @@ import {useSelector, useDispatch} from 'react-redux';
 import {updateShowSettings} from '../../Store/Reducers/settingsReducer';
 
 export default function Settings(props) {
-  console.log('this is status height', StatusBar.currentHeight);
   useEffect(() => {
     Animated.spring(animationValue, {
       toValue: 10,

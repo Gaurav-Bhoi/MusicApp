@@ -16,8 +16,10 @@ import SearchBar from '../Search Bar/index';
 import styles from './styles';
 import {LinearGradient} from 'react-native-svg';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {useNavigation} from '@react-navigation/native';
 
 export default function CommonScreen(props) {
+  const navigation = useNavigation();
   const setSettings = useDispatch();
   const [color, setColor] = useState('');
   const isDarkModeOn = useSelector(state => state.settingsReducer.isDarkModeOn);
@@ -40,7 +42,9 @@ export default function CommonScreen(props) {
   const renderHomePageHeader = () => {
     return (
       <View style={[styles.headerStyle, {backgroundColor: headerColor}]}>
-        <View style={styles.logoContainerStyle}>
+        <TouchableOpacity
+          style={styles.logoContainerStyle}
+          onPress={() => navigation.goBack()}>
           <FontAwesome5
             name="headphones-alt"
             size={25}
@@ -48,26 +52,26 @@ export default function CommonScreen(props) {
             style={{marginRight: 10, marginLeft: 5}}
           />
           <Text style={styles.titleStyle}>Music</Text>
-        </View>
+        </TouchableOpacity>
 
-        <View style={{flexDirection: 'row'}}>
-          {renderSearchBar()}
-          <TouchableOpacity
-            onPress={() =>
-              Settings_Controller.updateSettingsStatus(setSettings)
-            }
-            style={{alignSelf: 'center'}}>
-            <Icon name="dots-three-vertical" size={18} color="#FDFDFF" />
-          </TouchableOpacity>
-        </View>
+        {props.screenInfo.route.name == 'home' && (
+          <View style={{flexDirection: 'row'}}>
+            {renderSearchBar()}
+            <TouchableOpacity
+              onPress={() =>
+                Settings_Controller.updateSettingsStatus(setSettings)
+              }
+              style={{alignSelf: 'center'}}>
+              <Icon name="dots-three-vertical" size={18} color="#FDFDFF" />
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
     );
   };
 
   const renderSearchBar = () => {
-    if (props.screenInfo.route.name == 'home') {
-      return <SearchBar props={props} />;
-    }
+    return <SearchBar props={props} />;
   };
 
   const renderBackgroundImage = () => {
