@@ -9,8 +9,7 @@
     "test": "jest",
     "clean": "npm start --reset-cache",
     "lint": "eslint .",
-    "postinstall": "patch-package",
-    "generate_prod_bundle": "npx react-native build-android --mode=\"release\""
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@miblanchard/react-native-slider": "^2.3.0",
