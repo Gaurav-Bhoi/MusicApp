@@ -264,6 +264,20 @@ export default function Home(props) {
         renderItem={item => renderSoundTracks(item)}
         keyExtractor={index => index.toString()}
         style={styles.soundTrackFlatlist}
+        contentContainerStyle={{flex: 1}}
+        ListEmptyComponent={() => {
+          return (
+            <View
+              style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <FontAwesome5 name="frown" size={40} color="gray" />
+              <Text>No Music Available</Text>
+            </View>
+          );
+        }}
       />
     );
   };
