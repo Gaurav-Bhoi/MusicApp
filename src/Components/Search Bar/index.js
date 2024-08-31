@@ -8,6 +8,7 @@ import {Music_Controller} from '../../Controllers/Music Controller/musicControll
 
 export default function SearchBar(props) {
   const songs = useSelector(state => state.musicReducer.allSongs);
+  const isDarkModeOn = useSelector(state => state.settingsReducer.isDarkModeOn);
   const searchIconBg = showSearchBar ? 'gray' : '#FDFDFF';
   const [showSearchBar, setShowSearchBar] = useState(false);
   const dispatcher = useDispatch();
@@ -22,7 +23,11 @@ export default function SearchBar(props) {
       }}>
       <TouchableOpacity
         style={{
-          backgroundColor: showSearchBar ? 'white' : '#41C8C6',
+          backgroundColor: showSearchBar
+            ? 'white'
+            : isDarkModeOn
+            ? '#18122B'
+            : '#41C8C6',
           justifyContent: 'center',
           alignItems: 'center',
           borderTopRightRadius: 5,
