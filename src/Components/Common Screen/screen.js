@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Image,
   ImageBackground,
+  Keyboard,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -58,9 +59,10 @@ export default function CommonScreen(props) {
           <View style={{flexDirection: 'row'}}>
             {renderSearchBar()}
             <TouchableOpacity
-              onPress={() =>
-                Settings_Controller.updateSettingsStatus(setSettings)
-              }
+              onPress={() => {
+                Keyboard.dismiss();
+                Settings_Controller.updateSettingsStatus(setSettings);
+              }}
               style={{alignSelf: 'center'}}>
               <Icon name="dots-three-vertical" size={18} color="#FDFDFF" />
             </TouchableOpacity>

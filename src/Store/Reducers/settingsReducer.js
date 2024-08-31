@@ -25,6 +25,11 @@ const settingsReducer = createSlice({
       return state;
     },
 
+    hideSettings: state => {
+      state.showSettings = false;
+      return state;
+    },
+
     updateExitModal: state => {
       state.showExit = !state.showExit;
       return state;
@@ -100,5 +105,6 @@ export const {
   enableDarkMode,
   setPlayMode,
   setAudioOutputMode,
+  hideSettings,
   updateShowSearchBar,
 } = settingsReducer.actions;
